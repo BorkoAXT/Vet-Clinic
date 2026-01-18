@@ -32,7 +32,7 @@ namespace Vet_Clinic
 
             if (!string.IsNullOrEmpty(pet.Image) && File.Exists(pet.Image))
             {
-                this.pictureBoxImage.Image = Image.FromFile(pet.Image);
+                this.ImagePictureBoxPet.Image = Image.FromFile(pet.Image);
             }
 
             if (pet is Cat cat)
@@ -48,12 +48,13 @@ namespace Vet_Clinic
             this.buttonAdopt.Enabled = this.pet.Status != Status.Adopted;
         }
 
-        private void ButtonAddNewPetClick(object sender, EventArgs e)
+        private void AdoptPetButtonClick(object sender, EventArgs e)
         {
             this.pet.Status = Status.Adopted;
             this.textBoxStatus.Text = this.pet.Status.ToString();
             this.buttonAdopt.Enabled = false;
         }
+
 
     }
 }

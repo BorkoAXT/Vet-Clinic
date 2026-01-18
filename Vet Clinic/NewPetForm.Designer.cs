@@ -59,10 +59,10 @@
             // 
             // labelTitle
             // 
-            labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(368, 89);
+            labelTitle.Font = new Font("Segoe UI", 30F);
+            labelTitle.Location = new Point(297, 36);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(51, 15);
+            labelTitle.Size = new Size(206, 79);
             labelTitle.TabIndex = 0;
             labelTitle.Text = "New Pet";
             // 
@@ -93,7 +93,7 @@
             // labelFavToy
             // 
             labelFavToy.AutoSize = true;
-            labelFavToy.Location = new Point(419, 335);
+            labelFavToy.Location = new Point(439, 335);
             labelFavToy.Name = "labelFavToy";
             labelFavToy.Size = new Size(78, 15);
             labelFavToy.TabIndex = 3;
@@ -102,7 +102,7 @@
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Location = new Point(114, 211);
+            labelName.Location = new Point(77, 211);
             labelName.Name = "labelName";
             labelName.Size = new Size(39, 15);
             labelName.TabIndex = 4;
@@ -111,7 +111,7 @@
             // labelBirthday
             // 
             labelBirthday.AutoSize = true;
-            labelBirthday.Location = new Point(102, 249);
+            labelBirthday.Location = new Point(63, 246);
             labelBirthday.Name = "labelBirthday";
             labelBirthday.Size = new Size(51, 15);
             labelBirthday.TabIndex = 5;
@@ -120,7 +120,7 @@
             // labelBreed
             // 
             labelBreed.AutoSize = true;
-            labelBreed.Location = new Point(114, 292);
+            labelBreed.Location = new Point(77, 292);
             labelBreed.Name = "labelBreed";
             labelBreed.Size = new Size(37, 15);
             labelBreed.TabIndex = 6;
@@ -129,7 +129,7 @@
             // labelMedicalHistory
             // 
             labelMedicalHistory.AutoSize = true;
-            labelMedicalHistory.Location = new Point(63, 327);
+            labelMedicalHistory.Location = new Point(24, 327);
             labelMedicalHistory.Name = "labelMedicalHistory";
             labelMedicalHistory.Size = new Size(90, 15);
             labelMedicalHistory.TabIndex = 7;
@@ -138,7 +138,7 @@
             // labelWeight
             // 
             labelWeight.AutoSize = true;
-            labelWeight.Location = new Point(452, 211);
+            labelWeight.Location = new Point(472, 211);
             labelWeight.Name = "labelWeight";
             labelWeight.Size = new Size(45, 15);
             labelWeight.TabIndex = 8;
@@ -147,7 +147,7 @@
             // labelColor
             // 
             labelColor.AutoSize = true;
-            labelColor.Location = new Point(461, 249);
+            labelColor.Location = new Point(481, 249);
             labelColor.Name = "labelColor";
             labelColor.Size = new Size(36, 15);
             labelColor.TabIndex = 9;
@@ -156,7 +156,7 @@
             // labelImage
             // 
             labelImage.AutoSize = true;
-            labelImage.Location = new Point(457, 289);
+            labelImage.Location = new Point(477, 292);
             labelImage.Name = "labelImage";
             labelImage.Size = new Size(40, 15);
             labelImage.TabIndex = 10;
@@ -164,130 +164,156 @@
             // 
             // textBoxMedicalHistory
             // 
-            textBoxMedicalHistory.Location = new Point(169, 327);
+            textBoxMedicalHistory.BorderStyle = BorderStyle.FixedSingle;
+            textBoxMedicalHistory.Location = new Point(132, 327);
+            textBoxMedicalHistory.Multiline = true;
             textBoxMedicalHistory.Name = "textBoxMedicalHistory";
-            textBoxMedicalHistory.Size = new Size(210, 23);
+            textBoxMedicalHistory.Size = new Size(281, 45);
             textBoxMedicalHistory.TabIndex = 4;
             // 
             // textBoxBreed
             // 
-            textBoxBreed.Location = new Point(169, 289);
+            textBoxBreed.BorderStyle = BorderStyle.FixedSingle;
+            textBoxBreed.Location = new Point(132, 284);
             textBoxBreed.Name = "textBoxBreed";
-            textBoxBreed.Size = new Size(210, 23);
+            textBoxBreed.Size = new Size(281, 23);
             textBoxBreed.TabIndex = 3;
             // 
             // textBoxWeight
             // 
-            textBoxWeight.Location = new Point(517, 208);
+            textBoxWeight.BorderStyle = BorderStyle.FixedSingle;
+            textBoxWeight.Location = new Point(538, 208);
             textBoxWeight.Name = "textBoxWeight";
-            textBoxWeight.Size = new Size(206, 23);
+            textBoxWeight.Size = new Size(218, 23);
             textBoxWeight.TabIndex = 5;
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(169, 208);
+            textBoxName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxName.Location = new Point(132, 208);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(210, 23);
+            textBoxName.Size = new Size(281, 23);
             textBoxName.TabIndex = 1;
             // 
             // textBoxColor
             // 
-            textBoxColor.Location = new Point(517, 246);
+            textBoxColor.BorderStyle = BorderStyle.FixedSingle;
+            textBoxColor.Location = new Point(538, 252);
             textBoxColor.Name = "textBoxColor";
-            textBoxColor.Size = new Size(206, 23);
+            textBoxColor.Size = new Size(218, 23);
             textBoxColor.TabIndex = 6;
             // 
             // textBoxImage
             // 
-            textBoxImage.Location = new Point(517, 292);
+            textBoxImage.BorderStyle = BorderStyle.FixedSingle;
+            textBoxImage.Location = new Point(538, 292);
             textBoxImage.Name = "textBoxImage";
-            textBoxImage.Size = new Size(206, 23);
+            textBoxImage.Size = new Size(218, 23);
             textBoxImage.TabIndex = 7;
+            textBoxImage.MouseClick += TextBoxPhotoMouseDown;
             // 
             // textBoxFavoriteToy
             // 
-            textBoxFavoriteToy.Location = new Point(517, 332);
+            textBoxFavoriteToy.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFavoriteToy.Location = new Point(538, 332);
             textBoxFavoriteToy.Name = "textBoxFavoriteToy";
-            textBoxFavoriteToy.Size = new Size(206, 23);
+            textBoxFavoriteToy.Size = new Size(218, 23);
             textBoxFavoriteToy.TabIndex = 8;
             // 
             // dateTimePickerBirthday
             // 
-            dateTimePickerBirthday.Location = new Point(169, 249);
+            dateTimePickerBirthday.Location = new Point(132, 249);
             dateTimePickerBirthday.Name = "dateTimePickerBirthday";
-            dateTimePickerBirthday.Size = new Size(210, 23);
+            dateTimePickerBirthday.Size = new Size(281, 23);
             dateTimePickerBirthday.TabIndex = 2;
             // 
             // buttonAddNewPet
             // 
-            buttonAddNewPet.Location = new Point(459, 375);
+            buttonAddNewPet.BackColor = SystemColors.ActiveCaption;
+            buttonAddNewPet.ForeColor = SystemColors.ActiveCaptionText;
+            buttonAddNewPet.Location = new Point(626, 387);
             buttonAddNewPet.Name = "buttonAddNewPet";
-            buttonAddNewPet.Size = new Size(75, 23);
+            buttonAddNewPet.Size = new Size(110, 41);
             buttonAddNewPet.TabIndex = 1;
             buttonAddNewPet.Text = "Add";
-            buttonAddNewPet.UseVisualStyleBackColor = true;
+            buttonAddNewPet.UseVisualStyleBackColor = false;
             buttonAddNewPet.Click += ButtonAddNewPetClick;
             // 
             // labelInfoName
             // 
             labelInfoName.AutoSize = true;
-            labelInfoName.Location = new Point(169, 231);
+            labelInfoName.ForeColor = Color.Red;
+            labelInfoName.Location = new Point(132, 231);
             labelInfoName.Name = "labelInfoName";
-            labelInfoName.Size = new Size(0, 15);
+            labelInfoName.Size = new Size(227, 15);
             labelInfoName.TabIndex = 16;
+            labelInfoName.Text = "Name should be atleast 3 characters long!";
             // 
             // labelInfoBreed
             // 
             labelInfoBreed.AutoSize = true;
-            labelInfoBreed.Location = new Point(169, 309);
+            labelInfoBreed.ForeColor = Color.Red;
+            labelInfoBreed.Location = new Point(134, 309);
             labelInfoBreed.Name = "labelInfoBreed";
-            labelInfoBreed.Size = new Size(0, 15);
+            labelInfoBreed.Size = new Size(225, 15);
             labelInfoBreed.TabIndex = 17;
+            labelInfoBreed.Text = "Breed should be atleast 5 characters long!";
             // 
             // labelInfoMedicalHistory
             // 
             labelInfoMedicalHistory.AutoSize = true;
-            labelInfoMedicalHistory.Location = new Point(169, 375);
+            labelInfoMedicalHistory.ForeColor = Color.Red;
+            labelInfoMedicalHistory.Location = new Point(135, 375);
             labelInfoMedicalHistory.Name = "labelInfoMedicalHistory";
-            labelInfoMedicalHistory.Size = new Size(0, 15);
+            labelInfoMedicalHistory.Size = new Size(284, 15);
             labelInfoMedicalHistory.TabIndex = 18;
+            labelInfoMedicalHistory.Text = "Medical History should be atleast 10 characters long!";
             // 
             // labelInfoWeight
             // 
             labelInfoWeight.AutoSize = true;
-            labelInfoWeight.Location = new Point(517, 231);
+            labelInfoWeight.ForeColor = Color.Red;
+            labelInfoWeight.Location = new Point(538, 231);
             labelInfoWeight.Name = "labelInfoWeight";
-            labelInfoWeight.Size = new Size(0, 15);
+            labelInfoWeight.Size = new Size(97, 15);
             labelInfoWeight.TabIndex = 19;
+            labelInfoWeight.Text = "Weight is invalid!";
             // 
             // labelInfoColor
             // 
             labelInfoColor.AutoSize = true;
-            labelInfoColor.Location = new Point(517, 272);
+            labelInfoColor.ForeColor = Color.Red;
+            labelInfoColor.Location = new Point(538, 274);
             labelInfoColor.Name = "labelInfoColor";
-            labelInfoColor.Size = new Size(0, 15);
+            labelInfoColor.Size = new Size(97, 15);
             labelInfoColor.TabIndex = 20;
+            labelInfoColor.Text = "Color is required!";
             // 
             // labelInfoImage
             // 
             labelInfoImage.AutoSize = true;
-            labelInfoImage.Location = new Point(517, 314);
+            labelInfoImage.ForeColor = Color.Red;
+            labelInfoImage.Location = new Point(538, 314);
             labelInfoImage.Name = "labelInfoImage";
-            labelInfoImage.Size = new Size(0, 15);
+            labelInfoImage.Size = new Size(101, 15);
             labelInfoImage.TabIndex = 21;
+            labelInfoImage.Text = "Image is required!";
             // 
             // labelInfoFavToy
             // 
             labelInfoFavToy.AutoSize = true;
-            labelInfoFavToy.Location = new Point(517, 357);
+            labelInfoFavToy.ForeColor = Color.Red;
+            labelInfoFavToy.Location = new Point(538, 357);
             labelInfoFavToy.Name = "labelInfoFavToy";
-            labelInfoFavToy.Size = new Size(0, 15);
+            labelInfoFavToy.Size = new Size(130, 15);
             labelInfoFavToy.TabIndex = 22;
+            labelInfoFavToy.Text = "Favorite toy is required!";
             // 
             // NewPetForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumSpringGreen;
             ClientSize = new Size(800, 450);
             Controls.Add(labelInfoFavToy);
             Controls.Add(labelInfoImage);

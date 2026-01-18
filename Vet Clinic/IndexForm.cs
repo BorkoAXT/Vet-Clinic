@@ -2,15 +2,14 @@ namespace Vet_Clinic
 {
     public partial class IndexForm : Form
     {
-        private readonly List<IAnimal> pets = new List<IAnimal>()
-        {
-            new Cat("Fluffy", new DateTime(2018, 5, 15), "Persian", "Regular checkups", 4.5, "Golden", "Feather wand"),
-            new Dog("Buddy", new DateTime(2016, 8, 20), "Golden Retriever", "Vaccinated", 25.5, "Golden", "Stick")
-        };
         public IndexForm()
         {
             InitializeComponent();
         }
+
+        private readonly List<IAnimal> pets = new();
+
+
         private void OnLoad(object sender, EventArgs e)
         {
             LoadAllPets();
@@ -19,6 +18,15 @@ namespace Vet_Clinic
         private void LoadAllPets()
         {
             this.listViewPets.Clear();
+
+            for (int i = 0; i < this.pets.Count; i++)
+            {
+                if (this.pets[i].Status == Status.Adopted)
+                {
+                    this.pets.RemoveAt(i);
+                    i--;
+                }
+            }
 
             foreach (var pet in pets)
             {
@@ -32,9 +40,11 @@ namespace Vet_Clinic
 
             if (selectedPet != null)
             {
-                using PetDetailsForm detailsForm = new PetDetailsForm(selectedPet);
-                detailsForm.ShowDialog();
+                using PetDetailsForm petDetailForm = new(selectedPet);
+                petDetailForm.ShowDialog();
             }
+
+            LoadAllPets();
         }
 
         private void ButtonAddNewPetClick(object sender, EventArgs e)
@@ -46,7 +56,9 @@ namespace Vet_Clinic
                     this.pets.Add(newPetForm.Animal);
                 }
             }
+
             LoadAllPets();
         }
+
     }
 }

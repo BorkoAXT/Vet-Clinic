@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing;
 
 namespace Vet_Clinic
 {
@@ -17,6 +9,14 @@ namespace Vet_Clinic
         public NewPetForm()
         {
             InitializeComponent();
+
+            this.labelInfoBreed.Visible = false;
+            this.labelInfoName.Visible = false;
+            this.labelInfoMedicalHistory.Visible = false;
+            this.labelInfoColor.Visible = false;
+            this.labelInfoWeight.Visible = false;
+            this.labelInfoImage.Visible = false;
+            this.labelInfoFavToy.Visible = false;
         }
 
         public IAnimal Animal { get; set; }
@@ -45,15 +45,16 @@ namespace Vet_Clinic
             if (newAnimal != null)
             {
                 this.Animal = newAnimal;
-                DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
 
 
         private bool CheckIfInputsAreValid()
-            => CheckIfValid (this.textBoxName, 3, this.labelInfoName) && CheckIfValid (this.textBoxBreed, 5, this.labelInfoBreed) &&
+            => CheckIfValid(this.textBoxName, 3, this.labelInfoName) && CheckIfValid(this.textBoxBreed, 5, this.labelInfoBreed) &&
     CheckIfValid(this.textBoxMedicalHistory, 10, this.labelInfoMedicalHistory) && CheckIfValid(this.textBoxColor, 3, this.labelInfoColor) && CheckIfValidDouble(this.textBoxWeight, this.labelInfoWeight, 0.5) &&
-    CheckIfNotEmpty(this.petImage, this.labelInfoImage); 
+    CheckIfNotEmpty(this.petImage, this.labelInfoImage);
 
         private static bool CheckIfValid(TextBox textBox, int minLength, Label errorLabel)
         {
@@ -69,14 +70,14 @@ namespace Vet_Clinic
 
         private static bool CheckIfValidDouble(TextBox textBox, Label errorLabel, double min)
         {
-            bool isValid = double.TryParse(textBox.Text.Trim(), out double parsedValue) && parsedValue >= min;
+            bool isValid = double.TryParse(textBox.Text.Trim(), out double parsedValue) && parsedValue > min;
             ShowValidationError(errorLabel, isValid);
             return isValid;
         }
 
         private static bool CheckIfNotEmpty(string value, Label errorLabel)
         {
-            bool isValid = !string.IsNullOrWhiteSpace(value);
+            bool isValid = !string.IsNullOrWhiteSpace(value?.Trim());
             ShowValidationError(errorLabel, isValid);
             return isValid;
         }
@@ -87,7 +88,6 @@ namespace Vet_Clinic
             string breed = this.textBoxBreed.Text.Trim();
             string medicalHistory = this.textBoxMedicalHistory.Text.Trim();
             string color = this.textBoxColor.Text.Trim();
-            string favoriteToy = this.textBoxFavoriteToy.Text.Trim();
             DateTime birthday = this.dateTimePickerBirthday.Value;
             double weight = double.Parse(this.textBoxWeight.Text.Trim());
 
@@ -98,7 +98,7 @@ namespace Vet_Clinic
             }
             else
             {
-                animal = new Dog(name, birthday, breed, medicalHistory, weight, color, favoriteToy);
+                animal = new Dog(name, birthday, breed, medicalHistory, weight, color);
             }
 
             animal.Image = petImage;
@@ -120,13 +120,16 @@ namespace Vet_Clinic
         private void TextBoxPhotoMouseDown(object sender, MouseEventArgs e)
         {
             using OpenFileDialog openFileDialog = new OpenFileDialog();
+
             openFileDialog.Title = "Select Pet Image";
-            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; .bmp";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 petImage = openFileDialog.FileName;
                 this.textBoxImage.Text = Path.GetFileName(petImage);
             }
         }
+
     }
 }

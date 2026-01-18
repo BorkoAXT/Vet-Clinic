@@ -40,18 +40,20 @@
             // 
             labelTitle.Anchor = AnchorStyles.Top;
             labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(411, 111);
+            labelTitle.Font = new Font("Segoe UI", 30F);
+            labelTitle.ForeColor = SystemColors.ButtonFace;
+            labelTitle.Location = new Point(314, 20);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(55, 15);
+            labelTitle.Size = new Size(187, 54);
             labelTitle.TabIndex = 0;
-            labelTitle.Text = "labelTitle";
+            labelTitle.Text = "Vet Clinic";
             // 
             // listViewPets
             // 
             listViewPets.LargeImageList = imageListPets;
-            listViewPets.Location = new Point(36, 29);
+            listViewPets.Location = new Point(60, 101);
             listViewPets.Name = "listViewPets";
-            listViewPets.Size = new Size(369, 97);
+            listViewPets.Size = new Size(669, 255);
             listViewPets.SmallImageList = imageListPets;
             listViewPets.TabIndex = 1;
             listViewPets.UseCompatibleStateImageBehavior = false;
@@ -62,23 +64,25 @@
             imageListPets.ColorDepth = ColorDepth.Depth16Bit;
             imageListPets.ImageStream = (ImageListStreamer)resources.GetObject("imageListPets.ImageStream");
             imageListPets.TransparentColor = Color.Transparent;
-            imageListPets.Images.SetKeyName(0, "icons8-dog-100.png");
-            imageListPets.Images.SetKeyName(1, "icons8-cat-100.png");
+            imageListPets.Images.SetKeyName(0, "icons8-cat-100");
+            imageListPets.Images.SetKeyName(1, "icons8-dog-100");
             // 
             // buttonAddNewPet
             // 
-            buttonAddNewPet.Location = new Point(597, 266);
+            buttonAddNewPet.BackColor = SystemColors.ActiveCaption;
+            buttonAddNewPet.Location = new Point(586, 362);
             buttonAddNewPet.Name = "buttonAddNewPet";
-            buttonAddNewPet.Size = new Size(75, 23);
+            buttonAddNewPet.Size = new Size(143, 46);
             buttonAddNewPet.TabIndex = 2;
-            buttonAddNewPet.Text = "buttonAddNewPet";
-            buttonAddNewPet.UseVisualStyleBackColor = true;
+            buttonAddNewPet.Text = "Add New Pet";
+            buttonAddNewPet.UseVisualStyleBackColor = false;
             buttonAddNewPet.Click += ButtonAddNewPetClick;
             // 
             // IndexForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonAddNewPet);
             Controls.Add(listViewPets);

@@ -46,8 +46,8 @@
             textBoxType = new TextBox();
             dateTimePickerBirthday = new DateTimePicker();
             buttonAdopt = new Button();
-            pictureBoxImage = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxImage).BeginInit();
+            ImagePictureBoxPet = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)ImagePictureBoxPet).BeginInit();
             SuspendLayout();
             // 
             // labelPetsName
@@ -195,22 +195,23 @@
             buttonAdopt.TabIndex = 17;
             buttonAdopt.Text = "Adopt";
             buttonAdopt.UseVisualStyleBackColor = true;
-            buttonAdopt.Click += ButtonAddNewPetClick;
+            buttonAdopt.Click += AdoptPetButtonClick;
             // 
-            // pictureBoxImage
+            // ImagePictureBoxPet
             // 
-            pictureBoxImage.Location = new Point(102, 51);
-            pictureBoxImage.Name = "pictureBoxImage";
-            pictureBoxImage.Size = new Size(100, 70);
-            pictureBoxImage.TabIndex = 18;
-            pictureBoxImage.TabStop = false;
+            ImagePictureBoxPet.Location = new Point(134, 51);
+            ImagePictureBoxPet.Name = "ImagePictureBoxPet";
+            ImagePictureBoxPet.Size = new Size(100, 82);
+            ImagePictureBoxPet.TabIndex = 19;
+            ImagePictureBoxPet.TabStop = false;
             // 
             // PetDetailsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBoxImage);
+            Controls.Add(ImagePictureBoxPet);
             Controls.Add(buttonAdopt);
             Controls.Add(dateTimePickerBirthday);
             Controls.Add(textBoxType);
@@ -232,7 +233,7 @@
             Name = "PetDetailsForm";
             Text = "PetDetailsForm";
             Load += FillPetInfo;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ImagePictureBoxPet).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -257,6 +258,6 @@
         private TextBox textBoxType;
         private DateTimePicker dateTimePickerBirthday;
         private Button buttonAdopt;
-        private PictureBox pictureBoxImage;
+        private PictureBox ImagePictureBoxPet;
     }
 }

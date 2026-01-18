@@ -155,8 +155,9 @@
             // textBoxMedicalHistory
             // 
             textBoxMedicalHistory.Location = new Point(189, 295);
+            textBoxMedicalHistory.Multiline = true;
             textBoxMedicalHistory.Name = "textBoxMedicalHistory";
-            textBoxMedicalHistory.Size = new Size(195, 23);
+            textBoxMedicalHistory.Size = new Size(195, 58);
             textBoxMedicalHistory.TabIndex = 12;
             // 
             // textBoxFavToy

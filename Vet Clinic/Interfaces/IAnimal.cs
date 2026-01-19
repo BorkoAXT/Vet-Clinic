@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vet_Clinic
+namespace Vet_Clinic.Interfaces
 {
     public interface IAnimal
     {

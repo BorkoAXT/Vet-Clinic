@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using Vet_Clinic.Interfaces;
+using Vet_Clinic.Models;
 
 namespace Vet_Clinic
 {

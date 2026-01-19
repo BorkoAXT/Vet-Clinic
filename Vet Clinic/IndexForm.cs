@@ -1,3 +1,6 @@
+using Vet_Clinic.Interfaces;
+using Vet_Clinic.Models;
+
 namespace Vet_Clinic
 {
     public partial class IndexForm : Form

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vet_Clinic.Interfaces;
+using Vet_Clinic.Models;
 
 namespace Vet_Clinic
 {

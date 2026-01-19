@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vet_Clinic.Interfaces;
 
-namespace Vet_Clinic
+namespace Vet_Clinic.Models
 {
     public class Dog : IAnimal
     {
